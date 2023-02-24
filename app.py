@@ -44,8 +44,8 @@ def prediction(image, model):
     Pred=cat[result]
     return Pred
 
-MODEL_PATH2 ='one-class.h5'
-model1 = load_model(MODEL_PATH2)
+#MODEL_PATH2 ='one-class.h5'
+#model1 = load_model(MODEL_PATH2)
 
 def  leaf_predict(image, model1):
     test_image = image.resize((200,200))
@@ -62,6 +62,7 @@ def  leaf_predict(image, model1):
 if file is not None:
     img = Image.open(file)
     model = tf.keras.models.load_model("tomato_disease.h5")
+    model1 = tf.keras.models.load_model("one-class.h5")
     img_jpeg = img.convert('RGB')
     leaf = leaf_predict(img_jpeg, model1)
     if leaf == "leaf":
