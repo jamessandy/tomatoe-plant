@@ -8,7 +8,7 @@ from PIL import Image
 url = "https://github.com/NavinBondade/Identifying-Nine-Tomato-Disease-With-Deep-Learning"
 st.set_page_config(page_title='Tomato Diseases Identification Tool', initial_sidebar_state = 'auto')
 st.title("Nine Tomato Diseases Identification Tool")
-st.write("A machine learning powered system that tells accurately whether a tomato plant is infected with Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider Mites, Target Spot, Tomato Yellow Leaf Curl Virus, Tomato Mosaic Virus, Healthy. Check out code here [link](%s)." % url)
+st.write("A machine learning powered system that tells accurately whether a tomato plant is infected with Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider Mites, Target Spot, Tomato Yellow Leaf Curl Virus, Tomato Mosaic Virus, Healthy.")
 
 with open("Pictures.zip", "rb") as fp:
     col1, col2, col3 = st.columns(3)
