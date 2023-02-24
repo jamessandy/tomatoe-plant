@@ -48,9 +48,9 @@ def prediction(image, model):
 #model1 = load_model(MODEL_PATH2)
 
 def  leaf_predict(image, model1):
-    test_image = image.resize((224, 224))
+    test_image = image.resize((256, 256))
     test_image = preprocessing.image.img_to_array(test_image)
-    test_image = test_image / 255.0
+    test_image = test_image  / 255
     test_image = np.expand_dims(test_image, axis=0)
     preds = model1.predict(test_image)
     dist = np.linalg.norm(test_image - preds)
