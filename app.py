@@ -32,7 +32,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 file = st.sidebar.file_uploader("Upload Image", type=['jpeg','jpg','png'])
 
-cat = ['Bacterial Spot', 'Early Blight', 'Late Blight', 'Leaf Mold', 'Septoria Leaf Spot', 'Spider Mites', 'Target Spot', 'Tomato Yellow Leaf Curl Virus', 'Tomato Mosaic Virus', 'Healthy']
+cat = ['Bacterial Spot', 'Early Blight \n Prevention & treating :\n 1. Use Proper Plant Care Recommendations \n 2. An Organic Fungicide \n 3. Use Liquid Copper Fungicide', 'Late Blight', 'Leaf Mold', 'Septoria Leaf Spot', 'Spider Mites', 'Target Spot', 'Tomato Yellow Leaf Curl Virus', 'Tomato Mosaic Virus', 'Healthy']
 
 def prediction(image, model):
     test_image = image.resize((200,200))
