@@ -5,10 +5,10 @@ import numpy as np
 import webbrowser
 from PIL import Image
 
-url = "https://github.com/NavinBondade/Identifying-Nine-Tomato-Disease-With-Deep-Learning"
+url = "https://github.com/jamessandy/tomatoe-plant"
 st.set_page_config(page_title='Tomato Diseases Identification Tool', initial_sidebar_state = 'auto')
-st.title("Nine Tomato Diseases Identification Tool")
-st.write("A machine learning powered system that tells accurately whether a tomato plant is infected with Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider Mites, Target Spot, Tomato Yellow Leaf Curl Virus, Tomato Mosaic Virus, Healthy.")
+st.title("Tomato leaf disease detection")
+st.write(" This app uses machine learning to detect the diease affecting a tomato plant using just a photo of the leaf.  \n  \n Upload an image of the plant below to get started.")
 
 
 
