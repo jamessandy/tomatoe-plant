@@ -10,6 +10,27 @@ st.set_page_config(page_title='Tomato Diseases Identification Tool', initial_sid
 st.title("Nine Tomato Diseases Identification Tool")
 st.write("A machine learning powered system that tells accurately whether a tomato plant is infected with Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider Mites, Target Spot, Tomato Yellow Leaf Curl Virus, Tomato Mosaic Virus, Healthy.")
 
+
+
+
+image1 = Image.open('image3.JPG')
+image2 = Image.open('image2.JPG')
+image3 = Image.open('image3.JPG')
+
+
+col1, col2, col3 = st.columns( [0.5, 0.5, 0.5])
+with col1:
+    st.markdown('<p style="text-align: center;">feild survey</p>',unsafe_allow_html=True)
+    st.image(image1,width=200)  
+
+with col2:
+    st.markdown('<p style="text-align: center;">field survey 2</p>',unsafe_allow_html=True)
+    st.image(image2,width=200) 
+
+with col3:
+    st.markdown('<p style="text-align: center;">field survey 3</p>',unsafe_allow_html=True)
+    st.image(image3,width=200) 
+
 #with open("Pictures.zip", "rb") as fp:
 #    col1, col2, col3 = st.columns(3)
 #    with col2:
