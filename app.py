@@ -5,8 +5,6 @@ import numpy as np
 import webbrowser
 from PIL import Image
 
-[theme]
-textColor="#262730"
 
 url = "https://github.com/jamessandy/tomatoe-plant"
 st.set_page_config(page_title='Tomato Diseases Identification Tool', initial_sidebar_state = 'auto')
