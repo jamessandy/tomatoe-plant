@@ -90,7 +90,7 @@ if file is not None:
     if leaf == "leaf":
         pred = prediction(img_jpeg, model)
         #score = tf.nn.softmax(prediction[0])
-        st.markdown(f"<h2 style='text-align: center; color: black;'>{pred}</h2>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='text-align: center; color: white;'>{pred}</h2>", unsafe_allow_html=True)
         st.image(img, use_column_width=True)
     
      
