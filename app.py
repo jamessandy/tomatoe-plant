@@ -32,7 +32,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 file = st.sidebar.file_uploader("Upload Image", type=['jpeg','jpg','png'])
 
-cat = ['Bacterial Spot', 'Early Blight \n Prevention & treating :\n 1. Use Proper Plant Care Recommendations \n 2. An Organic Fungicide \n 3. Use Liquid Copper Fungicide', 'Late Blight', 'Leaf Mold', 'Septoria Leaf Spot', 'Spider Mites', 'Target Spot', 'Tomato Yellow Leaf Curl Virus', 'Tomato Mosaic Virus', 'Healthy']
+cat = ['Bacterial Spot, \n Prevention & treating :\n 1. Water Properly \n 2. Pull Out Plants \n 3. Use Copper Fungicide', 'Early Blight - \n Prevention & treating :\n 1. Use Proper Plant Care Recommendations \n 2. An Organic Fungicide \n 3. Use Liquid Copper Fungicide', 'Late Blight, \n Prevention & treating :\n 1. Water Properly \n 2. Pull Out Plants \n 3. Use Copper Fungicide', 'Leaf Mold, \n Prevention & treating :\n 1. Use an Appropriate Fungicid', 'Septoria Leaf Spot, \n Prevention & treating :\n 1. Rotate crops \n 2. Use a Garden fungi', 'Spider Mites, \n Prevention & treating :\n 1. Prune Your Plants \n 2. Spray a Copper Fungicide', 'Target Spot, \n Prevention & treating :\n 1. Prune Your Plants \n 2. Spray a Copper Fungicide', 'Tomato Yellow Leaf Curl Virus, \n Prevention & treating :\n 1. Prune Your Plants \n 2. Spray a Copper Fungicide', 'Tomato Mosaic Virus, \n Prevention & treating :\n 1. Treat with Neem Oil \n 2. Use Row Covers \n 3. Always Clean Garden Tools', 'Healthy']
 
 def prediction(image, model):
     test_image = image.resize((200,200))
