@@ -1,0 +1,78 @@
+# ETL Challenge #
+
+## Instructions ##
+
+Develop a solution using Python to ingest the input files and produce the output files listed below.
+
+Your solution will be evaluated based on the following criteria: demonstrating/following standards and best practices, cleanliness of code (naming, organization, documentation, etc), overall design, data structures and algorithms used, and the tests developed. Here are important examples of standards and best practice you should follow: include a Dockerfile and include a well-written README.md file.
+
+Please reach out if you have any questions, we look forward to hearing from you!
+
+## Input ##
+Your input will be 2 csv files listed below - 
+
+#### invoices.csv
+| Columns Name   |      Description      |
+|----------|-------------|
+| customer_id |  Customer Id |
+| customer_name |    Customer Name   |
+| invoice_id | Invoice Id |
+| invoice_amount | Invoice amount |
+| invoice_balance | Amount yet to be paid for this invoice |
+| invoice_date | Date of issue of the invoice |
+| payment_terms | Payment terms of the invoice |
+
+#### payments.csv
+| Columns Name   |      Description      |
+|----------|-------------|
+| customer_id |  Customer Id |
+| payment_id | Payment Id |
+| payment_amount | Payment amount |
+| payment_date | Date of the payment |
+| invoice_id | The related invoice, corresponds to the invoices invoice_id field |
+
+
+## Output ##
+Based on the input files described above, your solution must output 3 files with the columns listed below.
+
+#### processed-customers.csv
+
+| Columns Name   |      Description      |
+|----------|-------------|
+| customer_id |  Customer Id |
+| customer_name |    Customer Name   |
+| total_invoiced_amount | Sum of all invoice amounts for the customer |
+| total_invoice_count | Total count of all invoices for the customer |
+| unpaid_amount | Total amount that is yet to be paid by this customer |
+| unpaid_count | Total number of unpaid invoices for this customer |
+| first_invoice_date | Date of the first invoice for this customer |
+| first_invoice_amount | Amount of the first invoice for this customer |
+| last_payment_date | Date of the latest payment for this customer |
+| last_payment_amount | Amount of the latest payment for this customer |
+| customer_segment | 'High' if total_invoiced_amount > 90th percentile, 'Medium' if total_invoiced_amount between 70th and 90th percentile, 'Low' otherwise |
+
+#### processed-invoices.csv
+| Columns Name   |      Description      |
+|----------|-------------|
+| customer_id |  Customer Id |
+| customer_name |    Customer Name   |
+| invoice_id | Invoice Id |
+| invoice_amount | Invoice amount |
+| invoice_balance | Amount yet to be paid for this invoice |
+| invoice_date | Date of issue of the invoice |
+| payment_terms | Payment terms of the invoice |
+| invoice_due_date | invoice_date + 30 days if payment_terms is 'Net 30', invoice_date + 45 days if payment_terms is 'Net 45', invoice_date + 60 days if payment_terms is 'Net 60' |
+| invoice_overdue | true if 2021-10-01 > invoice_due_date, false otherwise |
+| customer_segment | The customer_segment from processed-customers.csv, matching by customer_id |
+
+#### processed-payments.csv
+| Columns Name   |      Description      |
+|----------|-------------|
+| customer_id |  Customer Id |
+| customer_name |    Customer Name   |
+| payment_id | Payment Id |
+| payment_amount | Payment amount |
+| payment_date | Date of the payment |
+| invoice_id | Invoice against which the payment is made |
+| customer_segment | The customer_segment from processed-customers.csv, matching by customer_id |
+| days_late | The difference in days between the payment_date and the related invoice_due_date from processed-invoices.csv; this value can be negative if paid early |
